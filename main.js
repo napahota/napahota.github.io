@@ -65,3 +65,10 @@ kartenLayer.bmapgrau.addTo(karte);
 karte.setView([47.208333, 13,038240], 10);
 
 karte.addControl(new L.Control.Fullscreen());
+
+
+
+const url = 'data/NPHTT_Themenwege2017.json' // implementierung der daten läuft glaube ich noch nicht 
+
+
+
