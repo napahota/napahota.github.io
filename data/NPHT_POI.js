@@ -1,4 +1,4 @@
-{
+const POI={
   "type": "FeatureCollection",
   "crs": {
     "type": "name",
@@ -11,7 +11,7 @@
     "id": 75,
     "geometry": {
       "type": "Point",
-      "coordinates": [383948.01379999984, 221196.01369999908]
+      "coordinates": [47.1264437, 12.4621]
     },
     "properties": {
       "OBJECTID": 75,

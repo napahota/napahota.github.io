@@ -66,8 +66,11 @@ karte.setView([47.208333, 13,038240], 10);
 
 karte.addControl(new L.Control.Fullscreen());
 
-//const url = 'data/NPHTT_Themenwege2017.json' // implementierung der daten läuft glaube ich noch nicht
+// Grenzen des NPHT eingefügt
 const Grenze = L.geoJson(Border, {
   color: "#006400"
 }).addTo(karte);
 layerControl.addOverlay(Grenze, "Grenze NPHT");
+
+
+// POI mit Pupups einfügen leider sind die POIs mit EPSG 31258 müssen convertiert werden zu wgs84
