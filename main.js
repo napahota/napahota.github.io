@@ -74,3 +74,9 @@ layerControl.addOverlay(Grenze, "Grenze NPHT");
 
 
 // POI mit Pupups einfügen leider sind die POIs mit EPSG 31258 müssen convertiert werden zu wgs84
+
+// eifügen von Zonen erfolgt. toDo: für die Zonentypen farblich abstimmen, und Clickable Popup erstellen!!!!
+const makeZonen = L.geoJson(Zonen, {
+  color: "#FF4000"
+}).addTo(karte);
+layerControl.addOverlay(makeZonen, "Zonen NPHT");
