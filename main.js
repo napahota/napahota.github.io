@@ -62,7 +62,7 @@ const layerControl = L.control.layers({
 }).addTo(karte);
 
 kartenLayer.bmapgrau.addTo(karte);
-karte.setView([47.208333, 13,038240], 10);
+karte.setView([47.208333, 13, 038240], 10);
 
 karte.addControl(new L.Control.Fullscreen());
 
@@ -74,9 +74,63 @@ layerControl.addOverlay(Grenze, "Grenze NPHT");
 
 
 // POI mit Pupups einfügen leider sind die POIs mit EPSG 31258 müssen convertiert werden zu wgs84
-
-// eifügen von Zonen erfolgt. toDo: für die Zonentypen farblich abstimmen, und Clickable Popup erstellen!!!!
-const makeZonen = L.geoJson(Zonen, {
+/*const POI = L.geoJson(NPHT_POI, {
   color: "#FF4000"
 }).addTo(karte);
+layerControl.addOverlay(POI, "Points of Interest");
+
+*/
+
+ //einfügen von Zonen erfolgt. toDo: für die Zonentypen farblich abstimmen, und Clickable Popup erstellen!!!!
+const makeZonen = L.geoJson(Zonen, {
+  color: "#FF4000"
+
+}).addTo(karte);
 layerControl.addOverlay(makeZonen, "Zonen NPHT");
+
+
+
+
+/* Versuch: Zonentypen farblich abstimmen -> Fail :( 
+const makeZonen = L.geoJson(Zonen);
+const farbPaletteZonen = [
+  [0, "#01DF01"],
+  [1, "#FF0000"]
+];
+console.log(farbPaletteZonen)
+L.geoJson(Zonen, {
+pointToLayer: function (feature, latlng) {
+  if (feature.properties.KERNZONE) {
+    let color = farbPaletteZonen[farbPaletteZonen.length - 1][1];
+    for (let i = 0; i < farbPaletteZonen.length; i++) {
+      if (feature.properties.KERNZONE < farbPaletteZonen[i][0]) {
+        color = farbPaletteZonen[i][1];
+        break;
+      } else {
+
+      }
+
+    }
+  }
+
+}
+}).addTo(makeZonen);
+layerControl.addOverlay(makeZonen, "Zonen NPHT");
+
+makeZonen.addTo(karte)
+
+
+*/ 
+
+
+
+
+
+
+// Einfügen der Themenwege Fail: Overlay schein auf aber nicht die Wege in der Karte, kein Fehler in der Konsole!!!
+/*const makeWege = L.geoJson(Themenwege, {
+  color: "#2E2EFE"
+}).addTo(karte);
+layerControl.addOverlay(makeWege, "Themenwege NPHT");*/
+
+

@@ -1,4 +1,4 @@
-const POI={
+const POI = {
   "type": "FeatureCollection",
   "crs": {
     "type": "name",
