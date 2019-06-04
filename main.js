@@ -73,7 +73,7 @@ const Grenze = L.geoJson(Border, {
 layerControl.addOverlay(Grenze, "Grenze NPHT");
 
 
-// POI mit Pupups einfügen leider sind die POIs mit EPSG 31258 müssen convertiert werden zu wgs84
+// POIs eingefügt, daten mit QGIS konvertiert :))
 const POI_WGS = L.geoJson(POI, {
   color: "#FF4000"
 }).addTo(karte);
