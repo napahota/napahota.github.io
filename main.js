@@ -75,9 +75,20 @@ layerControl.addOverlay(Grenze, "Grenze NPHT");
 
 // POIs eingefügt, daten mit QGIS konvertiert :))
 const POI_WGS = L.geoJson(POI, {
-  color: "#FF4000"
-}).addTo(karte);
-layerControl.addOverlay(POI_WGS, "Points of Interest");
+});
+
+const POIClusterGruppe =L.markerClusterGroup();
+
+POIClusterGruppe.addLayer(POI_WGS);
+    karte.addLayer(POIClusterGruppe);
+    layerControl.addOverlay(POIClusterGruppe, "Points of Interest")
+    //Suchfeld einfügen
+    //const suchFeld = new L.Control.Search({
+      //  layer: wlanClusterGruppe,
+      //  propertyName: "NAME",
+      //  zoom: 17,
+      //  initial: false,
+    //});
 
 
 
